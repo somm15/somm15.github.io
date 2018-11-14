@@ -46,3 +46,16 @@ plugins:
 #   - vendor/gems/
 #   - vendor/ruby/
 remote_theme: "mmistakes/minimal-mistakes"
+
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
