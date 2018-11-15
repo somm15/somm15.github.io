@@ -28,8 +28,13 @@ github_username:  somm15
 markdown: kramdown
 remote_theme: "mmistakes/minimal-mistakes"
 plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
   - jekyll-feed
-
+  - jemoji
+  - jekyll-include-cache
+paginate: 5
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
