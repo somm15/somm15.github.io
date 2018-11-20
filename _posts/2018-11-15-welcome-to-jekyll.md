@@ -10,7 +10,7 @@ My Yubikey became increasingly useful over the past months. I mainly use it for 
 
 I also use it to store my ssh keys (see: [SSH-PIV]  and [SSH-PIV-CERT]). I used a mix of both guides to have ssh certificates but use the slot a (with a pin rather than a touch). I created the keys and certificate in slot A using the GUI rather than the command line.
 
-Make sure to generate RSA2048, ECC doesn't work with ssh.
+**Warning!** Make sure to generate RSA2048, ECC doesn't work with ssh.
 {: .notice--danger}
 
 Very roughly with probably a few lines missing, I did:
@@ -50,10 +50,10 @@ Make sure to always launch your ssh-agent using the options -P:
 eval  `ssh-agent -s  -P /usr/local/lib/*,/usr/local/Cellar/opensc/*/lib/*.so,/usr/local/opt/opensc/lib/*.so,/usr/local/Cellar/yubico-piv-tool/*/lib/*.dylib`
 {% endhighlight %}
 
-Launch the ssh-agent before using ssh-add otherwise, MacOS will start a default ssh-agent automatically
+**Warning!** Launch the ssh-agent before using ssh-add otherwise, MacOS will start a default ssh-agent automatically
 {: .notice--danger}
 
-I wrote a plist file [Gist-plist] to launch the homebrew ssh-agent with the proper options rather than the default one. However, I can execute it only once, the second time will fail. I didn't solve it yet.
+**Beta** I wrote a plist file [Gist-plist] to launch the homebrew ssh-agent with the proper options rather than the default one. However, I can execute it only once, the second time will fail. I didn't solve it yet.
 {: .notice--success}
 
 To make it easier, I added the following lines to my .bash_profile:
@@ -65,7 +65,7 @@ alias yubinit='eval `/usr/local/bin/ssh-agent -s  -P /usr/local/lib/*,/usr/local
 
 The yubinit alias launches ssh-agent and adds the yubikey PKCS11 provider.
 
-The ssh version shipped with MacOS is fine. However, I would suggest installing the [Homebrew] version.
+**Tip** The ssh version shipped with MacOS is fine. However, I would suggest installing the [Homebrew] version.
 {: .notice--success}
 
 [SSH-PIV]: https://developers.yubico.com/PIV/Guides/SSH_with_PIV_and_PKCS11.html
