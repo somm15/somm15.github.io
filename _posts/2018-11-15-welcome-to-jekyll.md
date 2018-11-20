@@ -4,7 +4,7 @@ title:  "SSH PIV authentication on MacOS without errors"
 date:   2018-11-20 21:51:16 +0100
 categories: yubikey macos ssh
 ---
-My Yubikey has become increasingly useful over the past month. So far my main usage was 2 factor authentication using U2F for Facebook, Gitbhub and Archlinux laptop. I also use it to authenticate to my mac.
+My Yubikey became increasingly useful over the past months. I mainly use it for 2 factor authentication using U2F for Facebook, Gitbhub and Archlinux laptop. I also use it to authenticate to my mac.
 
 I used it as well to store my ssh keys (see: [SSH-PIV]  and [SSH-PIV-CERT]). I used a mix of both guides to have ssh certificates but use the slot a (with a pin rather than a touch). I use the GUI to create the keys and certifiate in slot A. Make sure to generate RSA2048, ECC doesn't work with ssh.
 
