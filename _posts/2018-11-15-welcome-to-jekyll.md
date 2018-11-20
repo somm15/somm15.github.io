@@ -9,7 +9,7 @@ My Yubikey became increasingly useful over the past months. I mainly use it for 
 I use it as well to store my ssh keys (see: [SSH-PIV]  and [SSH-PIV-CERT]). I used a mix of both guides to have ssh certificates but use the slot a (with a pin rather than a touch). I created the keys and certificate in slot A using the GUI rather than the command line.
 
 Make sure to generate RSA2048, ECC doesn't work with ssh.
-{: .notice--warning}
+{: .notice--danger}
 
 Very roughly with probably a few lines missing, I did:
 {% highlight bash %}
@@ -49,7 +49,7 @@ eval  `ssh-agent -s  -P /usr/local/lib/*,/usr/local/Cellar/opensc/*/lib/*.so,/us
 {% endhighlight %}
 
 Launch the ssh-agent before using ssh-add otherwise, MacOS will start a default ssh-agent automatically
-{: .notice--warning}
+{: .notice--danger}
 
 I wrote a plist file [Gist-plist] to launch the homebrew ssh-agent with the proper options rather than the default one. However, I can execute it only once, the second time will fail. I didn't solve it yet.
 {: .notice--info}
@@ -61,6 +61,12 @@ alias ssh-agent='eval `/usr/local/bin/ssh-agent -s  -P /usr/local/lib/*,/usr/loc
 alias yubinit='eval `/usr/local/bin/ssh-agent -s  -P /usr/local/lib/*,/usr/local/Cellar/yubico-piv-tool/*/lib/*.dylib`;ssh-add -s /usr/local/lib/libykcs11.dylib'
 {% endhighlight %}
 
+The yubinit alias launches ssh-agent and adds the yubikey PKCS11 provider.
+
+The ssh version shipped with MacOS is fine. However, I would suggest installing the [Homebrew] version.
+{: .notice--success}
+
 [SSH-PIV]: https://developers.yubico.com/PIV/Guides/SSH_with_PIV_and_PKCS11.html
 [SSH-PIV-CERT]: https://developers.yubico.com/PIV/Guides/SSH_user_certificates.html
 [Gist-plist]: https://gist.github.com/somm15/cf92d1ce5708a0a153b4157d6813053b
+[Homebrew]: https://brew.sh/
