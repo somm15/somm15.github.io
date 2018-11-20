@@ -51,6 +51,9 @@ eval  `ssh-agent -s  -P /usr/local/lib/*,/usr/local/Cellar/opensc/*/lib/*.so,/us
 Launch the ssh-agent before using ssh-add otherwise, MacOS will start a default ssh-agent automatically
 {: .notice--warning}
 
+I wrote a plist file [Gist-plist] to launch the homebrew ssh-agent with the proper options rather than the default one. However, I can execute it only once, the second time will fail. I didn't solve it yet.
+{: .notice--info}
+
 To make it easier, I added the following lines to my .bash_profile:
 {% highlight bash %}
 export SSH_AUTH_SOCK=$SSH_AUTH_SOCK_LOCAL
@@ -60,3 +63,4 @@ alias yubinit='eval `/usr/local/bin/ssh-agent -s  -P /usr/local/lib/*,/usr/local
 
 [SSH-PIV]: https://developers.yubico.com/PIV/Guides/SSH_with_PIV_and_PKCS11.html
 [SSH-PIV-CERT]: https://developers.yubico.com/PIV/Guides/SSH_user_certificates.html
+[Gist-plist]: https://gist.github.com/somm15/cf92d1ce5708a0a153b4157d6813053b
