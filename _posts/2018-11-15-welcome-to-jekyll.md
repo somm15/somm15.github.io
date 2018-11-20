@@ -6,7 +6,10 @@ categories: yubikey macos ssh
 ---
 My Yubikey became increasingly useful over the past months. I mainly use it for 2 factor authentication using U2F for Facebook, Gitbhub and Archlinux laptop. I also use it to authenticate to my mac.
 
-I use it as well to store my ssh keys (see: [SSH-PIV]  and [SSH-PIV-CERT]). I used a mix of both guides to have ssh certificates but use the slot a (with a pin rather than a touch). I created the keys and certifiate in slot A using the GUI rather than the command line. Make sure to generate RSA2048, ECC doesn't work with ssh.
+I use it as well to store my ssh keys (see: [SSH-PIV]  and [SSH-PIV-CERT]). I used a mix of both guides to have ssh certificates but use the slot a (with a pin rather than a touch). I created the keys and certificate in slot A using the GUI rather than the command line.
+
+Make sure to generate RSA2048, ECC doesn't work with ssh.
+{: .notice--warning}
 
 Very roughly with probably a few lines missing, I did:
 {% highlight bash %}
@@ -18,7 +21,7 @@ ssh-keygen -s ~/.ssh/ca -I identity -n "${LOGNAME}" ~/.ssh/id_rsa.pub
 {% endhighlight %}
 You can do more sophisticated things that just adding your CA to the trusted keys. But this out of scope for this post.
 
-However, I always faced the following problem:
+I always faced the following problem:
 {% highlight bash %}
 bash:~ somos$ ssh-add -s /usr/local/lib/libykcs11.dylib
 Enter passphrase for PKCS#11:
@@ -49,7 +52,7 @@ To make it easier, I added the following lines to my .bash_profile:
 export SSH_AUTH_SOCK=$SSH_AUTH_SOCK_LOCAL
 alias ssh-agent='eval `/usr/local/bin/ssh-agent -s  -P /usr/local/lib/*,/usr/local/Cellar/opensc/*/lib/*.so,/usr/local/opt/opensc/lib/*.so,/usr/local/Cellar/yubico-piv-tool/*/lib/*.dylib`'
 alias yubinit='eval `/usr/local/bin/ssh-agent -s  -P /usr/local/lib/*,/usr/local/Cellar/yubico-piv-tool/*/lib/*.dylib`;ssh-add -s /usr/local/lib/libykcs11.dylib'
-{% highlight bash %}
+{% endhighlight %}
 
 [SSH-PIV]: https://developers.yubico.com/PIV/Guides/SSH_with_PIV_and_PKCS11.html
 [SSH-PIV-CERT]: https://developers.yubico.com/PIV/Guides/SSH_user_certificates.html
