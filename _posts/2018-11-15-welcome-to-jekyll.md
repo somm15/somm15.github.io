@@ -13,16 +13,6 @@ I also use it to store my ssh keys (see: [SSH-PIV]  and [SSH-PIV-CERT]). I used 
 **Warning!** Make sure to generate RSA2048, ECC doesn't work with ssh.
 {: .notice--danger}
 
-Very roughly with probably a few lines missing, I did:
-{% highlight bash %}
-ssh-keygen -N '' -C user-ca -f ~/.ssh/ca
-sed 's/^/cert-authority /' ~/.ssh/ca.pub > ~/.ssh/authorized_keys
-ssh-add -s /usr/local/lib/libykcs11.dylib
-ssh-add -L > ~/.ssh/id_rsa.pub # If you use slot a, delete everything but like 1
-ssh-keygen -s ~/.ssh/ca -I identity -n "${LOGNAME}" ~/.ssh/id_rsa.pub
-{% endhighlight %}
-You can do more sophisticated things that just adding your CA to the trusted keys. But this out of scope for this post.
-
 I always faced the following problem:
 {% highlight bash %}
 bash:~ somos$ ssh-add -s /usr/local/lib/libykcs11.dylib
