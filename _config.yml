@@ -65,7 +65,7 @@ defaults:
 
 author:
   name     : "Simon Gillet"
-  avatar   : "/assets/images/bio-photo.jpg"
+  #avatar   : "/assets/images/bio-photo.jpg"
   bio      : "Home Security Ninja."
   location : "Belgium"
   links:
