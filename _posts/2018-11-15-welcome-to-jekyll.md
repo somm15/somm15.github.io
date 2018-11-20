@@ -30,7 +30,7 @@ bash:~ somos$ launchctl list|grep ssh
 698	0	com.openssh.ssh-agent
 {% endhighlight %}
 
-I found so many bad suggestions online to solve this problem. I found posts suggesting to disable the "System Integrity Protection" or recommending to delete symlink and copy files. This decreases the security of your Mac. SIP is useful and copying the file could cause your next update to fail or be inefficient.
+I found so many bad suggestions online to solve this problem. I read posts suggesting to disable the "System Integrity Protection" or recommending to delete symlink and copy files. This decreases the security of your Mac. SIP is useful and copying the file could cause your next update to fail or be inefficient.
 
 Let's try to understand the problem.
 
@@ -41,11 +41,15 @@ lrwxr-xr-x  1 somos  admin  51 13 oct 17:15 /usr/local/lib/libykcs11.dylib -> ..
 bash:~ somos$ ls -l /usr/local/lib/opensc-pkcs11.so
 lrwxr-xr-x  1 somos  admin  44 13 oct 21:02 /usr/local/lib/opensc-pkcs11.so -> ../Cellar/opensc/0.19.0/lib/opensc-pkcs11.so
 {% endhighlight %}
+
 Why would you delete the symlinks and copy the files to `/usr/local/lib/`? The ssh-agent has an option for that.
-Make sure to always launch your ssh-agent, before using ssh-add, using the options -P:
+Make sure to always launch your ssh-agent using the options -P:
 {% highlight bash %}
 eval  `ssh-agent -s  -P /usr/local/lib/*,/usr/local/Cellar/opensc/*/lib/*.so,/usr/local/opt/opensc/lib/*.so,/usr/local/Cellar/yubico-piv-tool/*/lib/*.dylib`
 {% endhighlight %}
+
+Launch the ssh-agent before using ssh-add otherwise, MacOS will start a default ssh-agent automatically
+{: .notice--warning}
 
 To make it easier, I added the following lines to my .bash_profile:
 {% highlight bash %}
