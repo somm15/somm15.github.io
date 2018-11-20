@@ -6,7 +6,8 @@ categories: yubikey macos ssh
 ---
 My Yubikey has become increasingly useful over the past month. So far my main usage was 2 factor authentication using U2F for Facebook, Gitbhub and Archlinux laptop. I also use it to authenticate to my mac.
 
-I used it as well to store my ssh keys (see: https://developers.yubico.com/PIV/Guides/SSH_user_certificates.html and https://developers.yubico.com/PIV/Guides/SSH_with_PIV_and_PKCS11.html). However, I always faced the following problem:
+I used it as well to store my ssh keys (see: [yubikey-SSH_PIV]  and [yubiket-SSH_PIV2]). However, I always faced the following problem:
+
 {% highlight bash %}
 bash:~ somos$ ssh-add -s /usr/local/lib/libykcs11.dylib
 Enter passphrase for PKCS#11:
@@ -32,6 +33,9 @@ print_hi('Tom')
 
 Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
 
+
+[yubikey-SSH_PIV] https://developers.yubico.com/PIV/Guides/SSH_user_certificates.html
+[yubiket-SSH_PIV2] https://developers.yubico.com/PIV/Guides/SSH_with_PIV_and_PKCS11.html
 [jekyll-docs]: https://jekyllrb.com/docs/home
 [jekyll-gh]:   https://github.com/jekyll/jekyll
 [jekyll-talk]: https://talk.jekyllrb.com/
