@@ -54,7 +54,7 @@ Launch the ssh-agent before using ssh-add otherwise, MacOS will start a default 
 {: .notice--danger}
 
 I wrote a plist file [Gist-plist] to launch the homebrew ssh-agent with the proper options rather than the default one. However, I can execute it only once, the second time will fail. I didn't solve it yet.
-{: .notice--info}
+{: .notice--success}
 
 To make it easier, I added the following lines to my .bash_profile:
 {% highlight bash %}
