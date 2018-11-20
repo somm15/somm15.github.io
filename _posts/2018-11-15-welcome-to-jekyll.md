@@ -6,7 +6,19 @@ categories: yubikey macos ssh
 ---
 My Yubikey has become increasingly useful over the past month. So far my main usage was 2 factor authentication using U2F for Facebook, Gitbhub and Archlinux laptop. I also use it to authenticate to my mac.
 
-I used it as well to store my ssh keys (see: [yubikey-SSH_PIV]  and [yubiket-SSH_PIV2]). However, I always faced the following problem:
+I used it as well to store my ssh keys (see: [SSH-PIV]  and [SSH-PIV-CERT]). I used a mix of both guides to have ssh certificates but use the slot a (with a pin rather than a touch). I use the GUI to create the keys and certifiate in slot A. Make sure to generate RSA2048, ECC doesn't work with ssh.
+
+{% highlight bash %}
+ssh-keygen -N '' -C user-ca -f ~/.ssh/ca #generate the CA
+sed 's/^/cert-authority /' ~/.ssh/ca.pub > ~/.ssh/authorized_keys #extract the CA public key
+ssh-add -s /usr/local/lib/libykcs11.dylib # you'll get an error, see below for the solution
+ssh-add -L > ~/.ssh/id_rsa.pub # If you use slot a, delete everything but like 1
+ssh-keygen -s ~/.ssh/ca -I identity -n "${LOGNAME}" ~/.ssh/id_rsa.pub
+{% endhighlight %}
+
+You can do more sophisticated things that just adding your CA to the trusted keys. But this out of scope for this post.
+
+However, I always faced the following problem:
 {% highlight bash %}
 bash:~ somos$ ssh-add -s /usr/local/lib/libykcs11.dylib
 Enter passphrase for PKCS#11:
@@ -39,6 +51,5 @@ alias ssh-agent='eval `/usr/local/bin/ssh-agent -s  -P /usr/local/lib/*,/usr/loc
 alias yubinit='eval `/usr/local/bin/ssh-agent -s  -P /usr/local/lib/*,/usr/local/Cellar/yubico-piv-tool/*/lib/*.dylib`;ssh-add -s /usr/local/lib/libykcs11.dylib'
 {% highlight bash %}
 
-
-[yubikey-SSH_PIV]: https://developers.yubico.com/PIV/Guides/SSH_user_certificates.html
-[yubiket-SSH_PIV2]: https://developers.yubico.com/PIV/Guides/SSH_with_PIV_and_PKCS11.html
+[SSH-PIV]: https://developers.yubico.com/PIV/Guides/SSH_with_PIV_and_PKCS11.html
+[SSH-PIV-CERT]: https://developers.yubico.com/PIV/Guides/SSH_user_certificates.html
