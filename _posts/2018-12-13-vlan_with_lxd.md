@@ -4,7 +4,7 @@ title:  "Configure a LXD container to be in a specific VLAN"
 date:   2018-12-13 21:51:16 +0100
 categories: network vlan lxd
 ---
-I run several lxd containers on server in the basement with a trunk and multiple VLANs.
+I run several LXD containers on server in the basement with a trunk and multiple VLANs.
 Previously, I configured an interface for each VLAN on the host.
 This was very stupid and ineffective. The host was reachable from almost all the VLANs and it caused routing problems.
 
