@@ -61,7 +61,7 @@ defaults:
       comments: false
       share: true
       related: true
-      author_profile: true
+      author_profile: true    
   # _pages
   - scope:
       path: "_pages"
@@ -69,6 +69,7 @@ defaults:
     values:
       layout: single
       author_profile: true
+
 author:
   name     : "Simon Gillet"
   #avatar   : "/assets/images/bio-photo.jpg"
