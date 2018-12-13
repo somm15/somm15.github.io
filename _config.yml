@@ -61,7 +61,7 @@ defaults:
       comments: false
       share: true
       related: true
-      author_profile: true    
+      author_profile: true
   # _pages
   - scope:
       path: "_pages"
@@ -72,8 +72,8 @@ defaults:
 
 author:
   name     : "Simon Gillet"
-  #avatar   : "/assets/images/bio-photo.jpg"
-  bio      : "Home Security Ninja."
+  avatar   : "/assets/images/avataaars.png"
+  bio      : "IOT and Security at home"
   location : "Belgium"
   links:
     - label: "Twitter"
