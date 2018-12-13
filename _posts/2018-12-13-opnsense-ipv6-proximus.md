@@ -5,6 +5,8 @@ date:   2018-12-13 21:51:16 +0100
 categories: network opnsense ipv6
 ---
 I tried several time to get IPv6 connection on my [OPNSense](https://opnsense.org) with working DHCPv6.
+By the way, this should work with [PFSense](https://www.pfsense.org) as well. I switched a while ago from PFSense to OPNSense because I had the feeling that PFSense was becoming too commercial.
+
 Unfortunately, my internet provider in Belgium (Proximus) does not give fix IPv6 addresses.
 So DHCPv6 is less usefull than planned.
 

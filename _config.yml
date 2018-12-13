@@ -30,7 +30,7 @@ paginate_path: /page:num/
 # Build settings
 markdown: kramdown
 remote_theme: "mmistakes/minimal-mistakes"
-minimal_mistakes_skin: "air"
+minimal_mistakes_skin: "dark"
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
