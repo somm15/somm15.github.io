@@ -82,6 +82,7 @@ author:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/somm15"
+      
 analytics:
   provider: "google-gtag"
   google:
