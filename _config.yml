@@ -13,7 +13,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Home Security Ninja
+title: Security Ninja
 email: security@gillet.ninja
 description: >- # this means to ignore newlines until "baseurl:"
   Security, MacOS and IOT.
@@ -82,7 +82,10 @@ author:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/somm15"
-      
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/simon-gillet-71a53422/"
+
 analytics:
   provider: "google-gtag"
   google:
