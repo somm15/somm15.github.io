@@ -2,7 +2,7 @@
 layout: single
 title:  "A cheap water level monitoring with ESP32 and Home Assistant"
 date:   2018-12-13 21:51:16 +0100
-categories: ESP32 IOT
+categories: ESP32 IOT 3D Prusa HomeAssistant
 ---
 
 How to monitor your rain water tank level with cheap for less than 30€?
@@ -54,6 +54,7 @@ For subsequent runs, you can flash the device over the air using:
 esphome water.yaml run --upload-port XX.XX.XX.XX
 {% endhighlight %}
 
+## The sensor
 You can now connect the sensor to the board. The one from Amazon came with the necessary wires. I didn't do any soldering yet. There are just 4 wires to connect and it works. SO I'll keep it like that.
 
 The sensor is pretty cheap and came with no documentation.
@@ -113,6 +114,8 @@ It is possible to limit the impact of an improper angle. When the measure does n
     - filter_out: nan
 {% endhighlight %}
 
+## The 3D mount
+
 Placing the sensor very precisely in the tank is not easy. Therefore I design 3D model of a sensor holder.
 It works pretty well and it really improves the accuracy.
 ![The 3D file](/assets/images/water_sensor/water_sensor_mount.png)
@@ -125,6 +128,7 @@ I suggest using PETG for printing. PLA does not support very well humid environm
 Here is a picture of the device placed:
 ![Device placed](/assets/images/water_sensor/water_sensor_install.png)
 
+## Home Assistant
 Finally, go to your Home Assistant web interface and follow [this guide](https://www.home-assistant.io/integrations/esphome/) to add the sensor to Home Assistant.
 
 You should now have a water monitoring system, fully integrated with Home Assistant.
