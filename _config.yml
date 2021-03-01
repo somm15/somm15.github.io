@@ -13,10 +13,10 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Security Ninja
+title: 4 sons and not enough time ...
 email: security@gillet.ninja
 description: >- # this means to ignore newlines until "baseurl:"
-  Security, MacOS and IOT.
+  Security, Energy, 3D printing and IOT.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://somm15.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: somm15
@@ -73,7 +73,7 @@ defaults:
 author:
   name     : "Simon Gillet"
   avatar   : "/assets/images/avataaars.png"
-  bio      : "IOT and Security at home"
+  bio      : "Cyber Security Engineer"
   location : "Belgium"
   links:
     - label: "Twitter"
