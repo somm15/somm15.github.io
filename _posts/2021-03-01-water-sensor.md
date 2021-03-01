@@ -5,7 +5,7 @@ date:   2021-03-01 21:51:16 +0100
 categories: ESP32 IOT 3D HomeAssistant
 ---
 
-How to monitor your rain water tank level with cheap for less than 30€?
+How to monitor your rain water tank level for less than 30€?
 
 ![Overkill setip for the task !](/assets/images/water_sensor/water_sensor_setup.png)
 
