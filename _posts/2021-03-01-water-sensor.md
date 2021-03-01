@@ -1,8 +1,8 @@
 ---
 layout: single
 title:  "A cheap water level monitoring with ESP32 and Home Assistant"
-date:   2018-12-13 21:51:16 +0100
-categories: ESP32 IOT 3D Prusa HomeAssistant
+date:   2021-03-01 21:51:16 +0100
+categories: ESP32 IOT 3D HomeAssistant
 ---
 
 How to monitor your rain water tank level with cheap for less than 30€?
