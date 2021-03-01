@@ -7,6 +7,9 @@ categories: ESP32 IOT
 
 How to monitor your rain water tank level with cheap for less than 30€?
 
+![Overkill setip for the task !](/assets/images/water_sensor/water_sensor_setup.png)
+
+
 You need a little bit of hardware:
 * An ESP32 NodeMCU boar (I used the one from [AZ Delivery](https://www.az-delivery.de/fr/products/esp32-developmentboard))
 * A waterproof ulatrasonic sentor (Used one from [Amazon](https://www.amazon.fr/gp/product/B07YDG53MC/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1))
@@ -108,10 +111,14 @@ Point the sensor to a wall (perpendicular) and run the ESPhome. Got a value? Goo
 
 Placing the sensor very precisely in the tank is not easy. So I design a sensor holder for 3D printers.
 It works pretty well and it really improves the measures.
+![The 3D file](/assets/images/water_sensor/water_sensor_mount.png)
+
 You can download it here:
-* STL file
-* Prusa printer files
+* [STL file](/assets/3d_printing/Water sensor holder v5.stl)
+* [Prusa printer files](/assets/3d_printing/Water sensor holder v5.3mf)
+I suggest using PETG for printing.
 
 Here is a picture of the device placed:
+![Device placed](/assets/images/water_sensor/water_sensor_install.png)
 
 Finally, go to your Home Assistant web interface and follow [this guide](https://www.home-assistant.io/integrations/esphome/).
