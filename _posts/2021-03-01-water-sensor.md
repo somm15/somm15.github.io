@@ -15,6 +15,7 @@ You need a little bit of hardware:
 * A waterproof ulatrasonic sentor (Used one from [Amazon](https://www.amazon.fr/gp/product/B07YDG53MC/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1))
 * A Micro USB cable
 * A USB power supply (there are other options [here](https://techexplorations.com/guides/esp32/begin/power/))
+
 I won't cover home assistant installation in this post.
 
 ## Introduction
