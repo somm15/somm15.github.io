@@ -13,7 +13,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: 4 sons and not enough time ...
+title: 3D Printing, ESP32, docker and other things ...
 email: security@gillet.ninja
 description: >- # this means to ignore newlines until "baseurl:"
   Security, Energy, 3D printing and IOT.
