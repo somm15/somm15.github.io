@@ -274,7 +274,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  github-pages (~> 219)
+  github-pages
   jekyll
   jekyll-feed
   jekyll-gist
