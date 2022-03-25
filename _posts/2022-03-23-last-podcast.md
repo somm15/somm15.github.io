@@ -70,4 +70,6 @@ sudo docker-compose up -d
 
 ## Sonos
 Now you can just add http://<hostnale>:>5203 as a radio station using the sonos app. 
-You can configure an alarm using this radio station.
+You can configure an alarm to use this radio station.
+
+Quick & dirty, but it work!
