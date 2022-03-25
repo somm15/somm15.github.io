@@ -1,10 +1,11 @@
 source 'https://rubygems.org'
-
-gem 'jekyll', '~>3.9'
-#gem "github-pages", "~> 219", group: :jekyll_plugins
-gem "github-pages"
+gem 'jekyll'
+gem "jemoji"
+gem "webrick"
+gem "kramdown-parser-gfm"
 
 group :jekyll_plugins do
+  gem "github-pages", "~> 219"
   gem 'jekyll-redirect-from'
   gem 'jekyll-sitemap'
   gem 'jekyll-feed'
